@@ -30,10 +30,13 @@ export class InnerMain extends React.PureComponent<Props, State> {
   }
 
   public render(): JSX.Element {
+    const payload = {
+      props: this.props,
+      config: Constants.manifest.extra
+    };
     return (
       <SafeAreaView style={styles.container}>
-        <Text>props: {JSON.stringify(this.props)}</Text>
-        <Text>extra: {JSON.stringify(Constants.manifest.extra)}</Text>
+        <Text>{JSON.stringify(payload, undefined, 2)}</Text>
       </SafeAreaView>
     );
   }
