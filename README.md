@@ -11,3 +11,10 @@
 - Run `yarn`
 - Run `yarn start` or `exp start`
 - Open the project url from Expo app
+
+## Feature
+
+- Redux
+- Redux-Saga
+- AppLoading and cached resource
+- Config from app.manifest.extra
