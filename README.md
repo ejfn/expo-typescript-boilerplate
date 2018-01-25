@@ -10,3 +10,4 @@
 - Clone the repo
 - Run `yarn`
 - Run `yarn start` or `exp start`
+- Open the project url from Expo app
