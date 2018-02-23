@@ -65,7 +65,6 @@ const mapStateToProps: MapStateToProps<StateProps, OwnProps, AppState> = (state:
   };
 };
 
-// tslint:disable-next-line:variable-name
 export const Home = connect<StateProps, DispatchProps, OwnProps>(
   mapStateToProps, {
     fetchSampleList

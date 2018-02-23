@@ -46,6 +46,12 @@
     "prefer-type-cast": false,
     "no-angle-bracket-type-assertion": true,
     "no-empty-interface": false,
+    "variable-name": [
+      true,
+      "check-format",
+      "allow-pascal-case",
+      "ban-keywords"
+    ],
     "function-name": [
       true,
       {
