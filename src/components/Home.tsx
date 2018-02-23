@@ -5,7 +5,12 @@ import {
   StyleSheet,
   Text
 } from 'react-native';
-import { NavigationAction, NavigationRoute, NavigationScreenProp, NavigationScreenProps } from 'react-navigation';
+import {
+  NavigationAction,
+  NavigationRoute,
+  NavigationScreenProp,
+  NavigationScreenProps
+} from 'react-navigation';
 import { connect, MapStateToProps } from 'react-redux';
 import { fetchSampleList } from '../actions/sample';
 import { AppState, Sample } from '../store';
@@ -28,11 +33,11 @@ type Props = OwnProps & StateProps & DispatchProps;
 
 interface State { }
 
-export class InnerMain extends React.PureComponent<Props, State> {
+export class HomeInner extends React.PureComponent<Props, State> {
 
   public static navigationOptions = (_: NavigationScreenProps<NavParams>) => {
     return {
-      headerTitle: 'Main'
+      headerTitle: 'Home'
     };
   }
 
@@ -61,10 +66,10 @@ const mapStateToProps: MapStateToProps<StateProps, OwnProps, AppState> = (state:
 };
 
 // tslint:disable-next-line:variable-name
-export const Main = connect<StateProps, DispatchProps, OwnProps>(
+export const Home = connect<StateProps, DispatchProps, OwnProps>(
   mapStateToProps, {
     fetchSampleList
-  })(InnerMain);
+  })(HomeInner);
 
 const styles = StyleSheet.create({
   container: {

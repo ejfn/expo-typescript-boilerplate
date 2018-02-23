@@ -1,10 +1,10 @@
 import { StackNavigator } from 'react-navigation';
-import { Main } from './Main';
+import { Home } from './Home';
 
 // tslint:disable-next-line:variable-name
 export const AppNavigator = StackNavigator(
   {
-    Main: { screen: Main }
+    Main: { screen: Home }
   },
   {
     navigationOptions: {

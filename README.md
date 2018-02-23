@@ -18,5 +18,6 @@
 
 - Redux
 - Redux-Saga
+- Navigation
 - AppLoading and cached resource
 - Config from app.manifest.extra
