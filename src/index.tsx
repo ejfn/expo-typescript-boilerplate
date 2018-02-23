@@ -3,8 +3,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-
-import { Main } from './components/Main';
+import { AppNavigator } from './components/AppNavigator';
 import * as reducers from './reducers';
 import { INITIAL_STATE } from './reducers/initialState';
 import { rootSaga } from './sagas';
@@ -42,7 +41,7 @@ export class App extends React.PureComponent<Props, State> {
     }
     return (
       <Provider store={store}>
-        <Main />
+        <AppNavigator />
       </Provider>
     );
   }

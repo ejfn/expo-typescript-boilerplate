@@ -5,11 +5,16 @@ import {
   StyleSheet,
   Text
 } from 'react-native';
+import { NavigationAction, NavigationRoute, NavigationScreenProp, NavigationScreenProps } from 'react-navigation';
 import { connect, MapStateToProps } from 'react-redux';
 import { fetchSampleList } from '../actions/sample';
 import { AppState, Sample } from '../store';
 
-interface OwnProps { }
+interface NavParams { }
+
+interface OwnProps {
+  navigation: NavigationScreenProp<NavigationRoute<NavParams>, NavigationAction>;
+}
 
 interface StateProps {
   samples: Array<Sample>;
@@ -24,6 +29,12 @@ type Props = OwnProps & StateProps & DispatchProps;
 interface State { }
 
 export class InnerMain extends React.PureComponent<Props, State> {
+
+  public static navigationOptions = (_: NavigationScreenProps<NavParams>) => {
+    return {
+      headerTitle: 'Main'
+    };
+  }
 
   public componentDidMount(): void {
     this.props.fetchSampleList(undefined);
