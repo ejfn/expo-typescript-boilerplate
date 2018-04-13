@@ -7,16 +7,16 @@
   "private": true,
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "tslint": "tslint --project tsconfig.json -t stylish --project",
+    "tslint": "tslint --project tsconfig.json -t stylish",
     "start": "exp start --dev --lan",
     "qualitycheck": "npm-run-all typecheck tslint"
   },
   "dependencies": {
     "@expo/vector-icons": "^6.3.1",
-    "expo": "^25.0.0",
-    "react": "16.2.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-25.0.0.tar.gz",
-    "react-navigation": "^1.1.2",
+    "expo": "~26.0.0",
+    "react": "~16.3.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-26.0.0.tar.gz",
+    "react-navigation": "~1.5.11",
     "react-redux": "^5.0.7",
     "redux": "^3.7.2",
     "redux-saga": "^0.16.0",
@@ -24,15 +24,15 @@
     "tslib": "1.9.0"
   },
   "devDependencies": {
-    "@types/react-native": "0.52.13",
-    "@types/react-navigation": "^1.0.32",
-    "@types/react-redux": "^5.0.15",
+    "@types/react-native": "~0.55.1",
+    "@types/react-navigation": "~1.5.5",
+    "@types/react-redux": "^5.0.16",
     "babel-preset-env": "^1.6.1",
     "npm-run-all": "^4.1.2",
-    "react-native-typescript-transformer": "1.2.3",
+    "react-native-typescript-transformer": "1.2.4",
     "tslint": "^5.9.1",
     "tslint-microsoft-contrib": "^5.0.3",
     "tslint-require-connnect-typing": "^1.0.1",
-    "typescript": "^2.7.2"
+    "typescript": "^2.8.3-insiders.20180407"
   }
 }

@@ -5,12 +5,7 @@ import {
   StyleSheet,
   Text
 } from 'react-native';
-import {
-  NavigationAction,
-  NavigationRoute,
-  NavigationScreenProp,
-  NavigationScreenProps
-} from 'react-navigation';
+import { NavigationScreenProp, NavigationScreenProps } from 'react-navigation';
 import { connect, MapStateToProps } from 'react-redux';
 import { fetchSampleList } from '../actions/sample';
 import { AppState, Sample } from '../store';
@@ -18,7 +13,7 @@ import { AppState, Sample } from '../store';
 interface NavParams { }
 
 interface OwnProps {
-  navigation: NavigationScreenProp<NavigationRoute<NavParams>, NavigationAction>;
+  navigation: NavigationScreenProp<{params: NavParams}>;
 }
 
 interface StateProps {
@@ -35,7 +30,7 @@ interface State { }
 
 export class HomeInner extends React.PureComponent<Props, State> {
 
-  public static navigationOptions = (_: NavigationScreenProps<NavParams>) => {
+  public static navigationOptions = (_: NavigationScreenProps) => {
     return {
       headerTitle: 'Home'
     };
