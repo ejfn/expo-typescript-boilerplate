@@ -1,7 +1,5 @@
 # expo-typescript-boilerplate
 
-[Demo](https://expo.io/@ericvan76/expo-typescript-boilerplate)
-
 ## Prerequisites
 
 - Install [Yarn](https://yarnpkg.com/lang/en/)

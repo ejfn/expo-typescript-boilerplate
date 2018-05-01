@@ -5,15 +5,12 @@ import {
   StyleSheet,
   Text
 } from 'react-native';
-import { NavigationScreenProp, NavigationScreenProps } from 'react-navigation';
+import { NavigationInjectedProps, NavigationScreenProps, withNavigation } from 'react-navigation';
 import { connect, MapStateToProps } from 'react-redux';
 import { fetchSampleList } from '../actions/sample';
 import { AppState, Sample } from '../store';
 
-interface NavParams { }
-
 interface OwnProps {
-  navigation: NavigationScreenProp<{params: NavParams}>;
 }
 
 interface StateProps {
@@ -24,7 +21,7 @@ interface DispatchProps {
   fetchSampleList: typeof fetchSampleList;
 }
 
-type Props = OwnProps & StateProps & DispatchProps;
+type Props = OwnProps & StateProps & DispatchProps & NavigationInjectedProps;
 
 interface State { }
 
@@ -63,7 +60,7 @@ const mapStateToProps: MapStateToProps<StateProps, OwnProps, AppState> = (state:
 export const Home = connect<StateProps, DispatchProps, OwnProps>(
   mapStateToProps, {
     fetchSampleList
-  })(HomeInner);
+  })(withNavigation(HomeInner));
 
 const styles = StyleSheet.create({
   container: {
