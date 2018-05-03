@@ -35,8 +35,9 @@ declare module 'expo' {
 
     export function setAdUnitID(adUnitID: string);
     export function setTestDeviceID(device: string);
-    export function requestAd(callback?: () => void);
-    export function showAd(callback?: () => void);
+    export function requestAdAsync(): Promise<void>;
+    export function showAdAsync(): Promise<void>;
+    export function getIsReadyAsync(): Promise<boolean>;
     export function addEventListener(evt: string, callback: () => void, options: {});
     export function removeEventListener(evt: string);
   }
@@ -1138,6 +1139,13 @@ declare module 'expo' {
   }
 
   namespace ImagePicker {
+
+    enum MediaTypeOptions {
+      All = 'All',
+      Videos = 'Videos',
+      Images = 'Images'
+    }
+
     interface ImageInfo {
       uri: string
       width: number
@@ -1148,6 +1156,7 @@ declare module 'expo' {
     type ImageResult = { cancelled: true } | ({ cancelled: false } & ImageInfo)
 
     interface ImageLibraryOptions {
+      mediaTypes?: MediaTypeOptions
       allowsEditing?: boolean
       aspect?: [number, number]
       quality?: number
@@ -1156,6 +1165,7 @@ declare module 'expo' {
     function launchImageLibraryAsync(options?: ImageLibraryOptions): Promise<ImageResult>
 
     interface CameraOptions {
+      mediaTypes?: MediaTypeOptions
       allowsEditing?: boolean
       aspect?: [number, number]
       quality?: number

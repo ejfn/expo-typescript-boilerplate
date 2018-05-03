@@ -2027,9 +2027,9 @@ expand-range@^1.8.1:
   dependencies:
     fill-range "^2.1.0"
 
-expo@27.0.0:
-  version "27.0.0"
-  resolved "https://registry.yarnpkg.com/expo/-/expo-27.0.0.tgz#3ff085a8562298ddd6f38f88d55ca893abca4f98"
+expo@^27.0.0:
+  version "27.0.1"
+  resolved "https://registry.yarnpkg.com/expo/-/expo-27.0.1.tgz#556a37121282f4509b0821d8d4e7c8a8da0c11d8"
   dependencies:
     "@expo/vector-icons" "^6.3.1"
     babel-preset-expo "^4.0.0"
